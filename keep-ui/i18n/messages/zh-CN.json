@@ -1,5 +1,19 @@
 {
   "settings": {
+    "tabs": {
+      "usersAndAccess": "用户与访问",
+      "incomingWebhook": "Webhook 接收",
+      "smtp": "SMTP",
+      "providerImages": "集成图标"
+    },
+    "subTabs": {
+      "users": "用户",
+      "groups": "分组",
+      "roles": "角色",
+      "permissions": "权限",
+      "apiKeys": "API 密钥",
+      "sso": "SSO"
+    },
     "webhooks": {
       "title": "Webhook",
       "addWebhook": "添加 Webhook",
@@ -24,8 +38,10 @@
       "messages": {
         "externallyManaged": "用户由外部管理，无法在此创建",
         "confirmDelete": "确定要删除此用户吗？",
-        "deleteFailed": "删除用户失败"
+        "deleteFailed": "删除用户失败",
+        "managementDisabled": "用户管理已禁用。更多信息请查看文档。"
       },
+      "viewDocumentation": "查看文档",
       "labels": {
         "username": "用户名",
         "role": "角色",
@@ -108,6 +124,7 @@
     "general": "常规"
   },
   "webhook": {
+    "title": "Webhook",
     "learnMore": "了解更多",
     "copiedToClipboard": "代码已复制到剪贴板！",
     "apiKey": "API 密钥：",
@@ -115,6 +132,7 @@
     "copyFailed": "复制代码失败",
     "url": "URL：",
     "copyFailedDescription": "请检查浏览器权限。",
+    "tryAgainFailed": "出现错误！请重试。",
     "createExampleAlert": "点击创建示例告警",
     "subtitle": "查看租户 Webhook 设置",
     "loadingFailed": "加载 Webhook 设置失败。",
@@ -751,7 +769,8 @@
       "description": "描述",
       "valid": "有效",
       "notChecked": "未检查",
-      "mandatoryForWebhook": "Webhook 安装所必需"
+      "mandatoryForWebhook": "Webhook 安装所必需",
+      "revalidateFailed": "重新验证作用域失败"
     },
     "installed": "已安装的集成",
     "available": "可用的集成",
@@ -778,10 +797,9 @@
       "installedSuccess": "已成功安装 {provider}",
       "installFailed": "安装失败",
       "scopesRequired": "需要验证作用域",
-      "useSavedCredentials": "使用已保存的凭据"
-    },
-    "scopes": {
-      "revalidateFailed": "重新验证作用域失败"
+      "useSavedCredentials": "使用已保存的凭据",
+      "webhookDisabledNoExternalUrl": "Webhook 安装已禁用，因为 Keep 未配置外部 URL。",
+      "clickToLearnMore": "点击了解更多"
     },
     "connectionProblem": "连接问题",
     "updateSuccess": "集成更新成功",
@@ -1336,6 +1354,12 @@
       "failedSingle": "修改告警状态失败。",
       "failedMultiple": "批量修改告警状态失败。",
       "loadingEditor": "正在加载编辑器..."
+    },
+    "table": {
+      "name": "名称",
+      "description": "描述",
+      "lastReceived": "最后接收时间",
+      "assignee": "处理人"
     },
     "tabs": {
       "alerts": "告警",

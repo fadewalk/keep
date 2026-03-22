@@ -55,6 +55,7 @@ import {
   getColumnDisplayName,
 } from "@/widgets/alerts-table/ui/alert-table-column-rename";
 import { useProviders } from "@/utils/hooks/useProviders";
+import { useI18n } from "@/i18n/hooks/useI18n";
 
 export const DEFAULT_COLS = [
   "severity",
@@ -220,6 +221,7 @@ export const useAlertTableCols = (
   }: GenerateAlertTableColsArg = { presetName: "feed" }
 ) => {
   const [expandedToggles, setExpandedToggles] = useState<RowSelectionState>({});
+  const { t } = useI18n();
   const [rowStyle] = useAlertRowStyle();
   const [columnTimeFormats] = useLocalStorage<Record<string, TimeFormatOption>>(
     `column-time-formats-${presetName}`,
@@ -244,7 +246,7 @@ export const useAlertTableCols = (
       (row) => getNestedValue(row, colName),
       {
         id: colName,
-        header: getColumnDisplayName(colName, colName, columnRenameMapping),
+        header: getColumnDisplayName(colName, colName, columnRenameMapping, t),
         minSize: 100,
         enableGrouping: true,
         getGroupingValue: (row) => {
@@ -534,7 +536,7 @@ export const useAlertTableCols = (
     // Name column butted up against source
     columnHelper.accessor("name", {
       id: "name",
-      header: getColumnDisplayName("name", "Name", columnRenameMapping),
+      header: getColumnDisplayName("name", "Name", columnRenameMapping, t),
       enableGrouping: true,
       enableResizing: true,
       getGroupingValue: (row) => row.name,
@@ -571,7 +573,8 @@ export const useAlertTableCols = (
       header: getColumnDisplayName(
         "description",
         "Description",
-        columnRenameMapping
+        columnRenameMapping,
+        t
       ),
       enableGrouping: true,
       // Increase default minSize to give description more space
@@ -614,7 +617,8 @@ export const useAlertTableCols = (
       header: getColumnDisplayName(
         "lastReceived",
         "Last Received",
-        columnRenameMapping
+        columnRenameMapping,
+        t
       ),
       filterFn: isDateWithinRange,
       minSize: 80,
@@ -634,7 +638,7 @@ export const useAlertTableCols = (
     }),
     columnHelper.accessor("assignee", {
       id: "assignee",
-      header: getColumnDisplayName("assignee", "Assignee", columnRenameMapping),
+      header: getColumnDisplayName("assignee", "Assignee", columnRenameMapping, t),
       enableGrouping: true,
       getGroupingValue: (row) => row.assignee,
       minSize: 100,

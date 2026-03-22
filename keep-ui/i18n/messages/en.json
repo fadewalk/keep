@@ -491,6 +491,12 @@
       "moreCount": "... ({count} more)",
       "showLess": "Show Less ↑"
     },
+    "table": {
+      "name": "Name",
+      "description": "Description",
+      "lastReceived": "Last Received",
+      "assignee": "Assignee"
+    },
     "tabs": {
       "alerts": "Alerts",
       "groups": "Groups",
@@ -1254,6 +1260,20 @@
   "settings": {
     "title": "Settings",
     "general": "General",
+    "tabs": {
+      "usersAndAccess": "Users & Access",
+      "incomingWebhook": "Incoming Webhook",
+      "smtp": "SMTP",
+      "providerImages": "Provider Icons"
+    },
+    "subTabs": {
+      "users": "Users",
+      "groups": "Groups",
+      "roles": "Roles",
+      "permissions": "Permissions",
+      "apiKeys": "API Keys",
+      "sso": "SSO"
+    },
     "users": {
       "title": "Users Management",
       "subtitle": "Add or remove users from your tenant",
@@ -1271,8 +1291,10 @@
       "messages": {
         "confirmDelete": "Are you sure you want to delete this user?",
         "deleteFailed": "Failed to delete user",
-        "externallyManaged": "Users are managed externally and cannot be created from Keep"
-      }
+        "externallyManaged": "Users are managed externally and cannot be created from Keep",
+        "managementDisabled": "User management is disabled. For more information, see the documentation."
+      },
+      "viewDocumentation": "View Documentation"
     },
     "groups": {
       "title": "Groups Management",
@@ -1919,6 +1941,7 @@
     }
   },
   "webhook": {
+    "title": "Webhook",
     "subtitle": "View your tenant webhook settings",
     "url": "URL:",
     "apiKey": "API Key:",
@@ -1927,6 +1950,7 @@
     "copiedToClipboard": "Code copied to clipboard!",
     "copyFailed": "Failed to copy code",
     "copyFailedDescription": "Please check your browser permissions.",
+    "tryAgainFailed": "Something went wrong! Please try again.",
     "learnMore": "Learn more",
     "loadingError": "Error",
     "loadingFailed": "Failed to load webhook settings."
@@ -2036,7 +2060,9 @@
       "installedSuccess": "Successfully installed {provider}",
       "installFailed": "Installation failed",
       "scopesRequired": "Scopes validation required",
-      "useSavedCredentials": "Use saved credentials"
+      "useSavedCredentials": "Use saved credentials",
+      "webhookDisabledNoExternalUrl": "Webhook installation is disabled because Keep is running without an external URL.",
+      "clickToLearnMore": "Click to learn more"
     },
     "scopes": {
       "revalidateFailed": "Failed to revalidate scopes",

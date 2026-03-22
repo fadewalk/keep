@@ -159,7 +159,7 @@ req.end();
     if (resp.ok) {
       router.push("/alerts/feed");
     } else {
-      showErrorToast(resp, "Something went wrong! Please try again.");
+      showErrorToast(resp, t("webhook.tryAgainFailed"));
     }
   };
 
@@ -191,7 +191,7 @@ req.end();
   return (
     <div className="flex flex-col gap-4">
       <header>
-        <PageTitle>{t("settings.webhook.title")}</PageTitle>
+        <PageTitle>{t("webhook.title")}</PageTitle>
         <PageSubtitle>{t("webhook.subtitle")}</PageSubtitle>
       </header>
       <Card>

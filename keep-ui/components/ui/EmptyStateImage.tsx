@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Card } from "@tremor/react";
 import { CircleStackIcon } from "@heroicons/react/24/outline";
 import Image from 'next/image';
+import { useI18n } from "@/i18n/hooks/useI18n";
 
 interface EmptyStateImageProps {
   message: string;
@@ -16,6 +17,7 @@ export function EmptyStateImage({
   imageURL,
   icon: Icon = CircleStackIcon,
 }: EmptyStateImageProps) {
+  const { t } = useI18n();
   return (
     <div className="h-full flex flex-col relative">
       <Card className="w-full flex-grow overflow-hidden">
@@ -44,7 +46,7 @@ export function EmptyStateImage({
               color="orange"
               onClick={() => window.open(documentationURL, '_blank')}
             >
-              View Documentation
+              {t("settings.users.viewDocumentation")}
             </Button>
           </div>
         </Card>

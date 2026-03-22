@@ -629,11 +629,10 @@ const ProviderForm = ({
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Webhook installation is disabled because Keep is running
-                      without an external URL.
+                      {t("providers.webhook.webhookDisabledNoExternalUrl")}
                       <br />
                       <br />
-                      Click to learn more
+                      {t("providers.webhook.clickToLearnMore")}
                     </a>
                   </Callout>
                 </span>

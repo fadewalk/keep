@@ -166,7 +166,18 @@ export const createColumnRenameMenuItems = (
 export const getColumnDisplayName = (
   columnId: string,
   originalName: string,
-  columnRenameMapping: ColumnRenameMapping
+  columnRenameMapping: ColumnRenameMapping,
+  t?: (key: string) => string
 ): string => {
-  return columnRenameMapping[columnId] || startCase(originalName);
+  if (columnRenameMapping[columnId]) {
+    return columnRenameMapping[columnId];
+  }
+  const translationKey = `alerts.table.${columnId}`;
+  if (t) {
+    const translated = t(translationKey);
+    if (translated !== translationKey) {
+      return translated;
+    }
+  }
+  return startCase(originalName);
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Card } from "@tremor/react";
 import { CircleStackIcon } from "@heroicons/react/24/outline";
+import { useI18n } from "@/i18n/hooks/useI18n";
 
 interface EmptyStateTableProps {
   message: string;
@@ -15,6 +16,7 @@ export function EmptyStateTable({
   children,
   icon: Icon = CircleStackIcon,
 }: EmptyStateTableProps) {
+  const { t } = useI18n();
   return (
     <div className="flex flex-col relative">
       <Card className="p-0 w-full overflow-auto">{children}</Card>
@@ -34,7 +36,7 @@ export function EmptyStateTable({
               color="orange"
               onClick={() => window.open(documentationURL, "_blank")}
             >
-              View Documentation
+              {t("settings.users.viewDocumentation")}
             </Button>
           </div>
         </Card>
