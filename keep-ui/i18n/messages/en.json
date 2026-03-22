@@ -2110,7 +2110,8 @@
       "installOrUpdateWebhook": "Install/Update Webhook",
       "id": "Id: ",
       "slackCommunity": "Slack Community",
-      "checkHealth": "Check health"
+      "checkHealth": "Check health",
+      "providerNameDisabled": "This field is disabled because it is pre-filled from the workflow."
     },
     "formFields": {
       "addEntry": "Add Entry"

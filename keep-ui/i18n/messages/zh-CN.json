@@ -834,7 +834,8 @@
       "installOrUpdateWebhook": "安装/更新 Webhook",
       "id": "ID：",
       "slackCommunity": "Slack 社区",
-      "checkHealth": "检查健康状态"
+      "checkHealth": "检查健康状态",
+      "providerNameDisabled": "此字段已禁用，因为它是预先从工作流中填充的。"
     },
     "formFields": {
       "addEntry": "添加条目"

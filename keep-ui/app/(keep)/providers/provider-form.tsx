@@ -494,7 +494,7 @@ const ProviderForm = ({
               disabled={(isProviderNameDisabled || isHealthCheck) ?? false}
               title={
                 isProviderNameDisabled
-                  ? "This field is disabled because it is pre-filled from the workflow."
+                  ? t("providers.form.providerNameDisabled")
                   : ""
               }
               onChange={handleFormChange}
