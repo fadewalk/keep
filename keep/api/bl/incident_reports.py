@@ -9,7 +9,7 @@ from openai import OpenAI
 from pydantic import BaseModel
 
 from keep.api.bl.incidents_bl import IncidentBl
-from keep.api.consts import OPENAI_MODEL_NAME
+from keep.api.consts import OPENAI_BASE_URL, OPENAI_MODEL_NAME
 from keep.api.models.db.incident import IncidentStatus
 from keep.api.models.incident import IncidentDto
 
@@ -82,7 +82,7 @@ class IncidentReportsBl:
     @property
     def open_ai_client(self):
         if not self.__open_ai_client and os.environ.get("OPENAI_API_KEY"):
-            self.__open_ai_client = OpenAI()
+            self.__open_ai_client = OpenAI(base_url=OPENAI_BASE_URL) if OPENAI_BASE_URL else OpenAI()
 
         return self.__open_ai_client
 

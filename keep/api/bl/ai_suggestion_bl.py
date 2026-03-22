@@ -10,7 +10,7 @@ from openai import OpenAI, OpenAIError
 from sqlmodel import Session
 
 from keep.api.bl.incidents_bl import IncidentBl
-from keep.api.consts import OPENAI_MODEL_NAME
+from keep.api.consts import OPENAI_BASE_URL, OPENAI_MODEL_NAME
 from keep.api.core.db import get_session_sync
 from keep.api.models.alert import AlertDto
 from keep.api.models.db.ai_suggestion import AIFeedback, AISuggestion, AISuggestionType
@@ -36,7 +36,7 @@ class AISuggestionBl:
         # Todo: also goes with settings page
         #       https://github.com/keephq/keep/issues/2365
         try:
-            self._client = OpenAI()
+            self._client = OpenAI(base_url=OPENAI_BASE_URL) if OPENAI_BASE_URL else OpenAI()
         except OpenAIError as e:
             # if its api key error, we should raise 400
             self.logger.error(f"Failed to initialize OpenAI client: {e}")
