@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(ls -la package.json docker-compose*.yml)",
+      "Bash(docker ps:*)",
+      "Bash(npm run:*)",
+      "Bash(gh pr:*)",
+      "Bash(jq .timeline[].event)",
+      "Bash(xargs kill:*)"
+    ]
+  }
+}
